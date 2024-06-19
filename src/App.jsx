@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import IngredientList from './components/IngredientList';
 import BurgerStack from './components/BurgerStack';
 
@@ -25,11 +26,12 @@ const App = () => {
   const [stack, setStack] = useState([]);
 
   const addToBurger = (ingredient) => {
-    setStack([ingredient, ...stack]);
+    const key = uuidv4();
+    setStack([{ingredient: ingredient, key: key}, ...stack]);
   }
 
-  const removeFromBurger = (ingredient) => {
-    setStack(stack.filter((item) => item !== ingredient));
+  const removeFromBurger = (key) => {
+    setStack(stack.filter((item) => item.key !== key));
   }
 
   return (

@@ -9,12 +9,14 @@ const BurgerStack = (props) => {
         <>
             <h2>Your Burger</h2>
             <ul>
-                {props.ingredients.map((ingredient, index) => (
+                {props.ingredients.map(({ingredient, key}, index) => (
                     <Ingredient 
-                        index={index} 
+                        key={key}
+                        index={key} 
                         ingredient={ingredient} 
                         actionIcon="X"
                         onClickAction={props.onClickAction}
+                        onClickPayload={key}
                     />
                 ))} 
             </ul>

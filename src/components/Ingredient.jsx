@@ -5,7 +5,12 @@ const Ingredient = (props) => {
             style={{ backgroundColor: props.ingredient.color }}
         >
             {props.ingredient.name}
-            <button type="button" onClick={() => props.onClickAction(props.ingredient)}>{props.actionIcon}</button>
+            <button 
+                type="button" 
+                onClick={() => props.onClickAction(props.onClickPayload)}
+            >
+                {props.actionIcon}
+            </button>
         </li>
     )
 };

@@ -7,10 +7,12 @@ const IngredientList = (props) => {
         <ul>
             {props.ingredients.map((ingredient, index) => (
                 <Ingredient 
+                    key={index}
                     index={index} 
                     ingredient={ingredient} 
                     actionIcon="+"
                     onClickAction={props.onClickAction}
+                    onClickPayload={ingredient}
                 />
             ))} 
         </ul>
