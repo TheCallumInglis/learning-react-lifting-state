@@ -1,5 +1,7 @@
 const IngredientList = (props) => {
     return (
+        <>
+        <h2>Ingredients</h2>
         <ul>
             {props.ingredients.map((ingredient, index) => (
                 <li 
@@ -11,6 +13,7 @@ const IngredientList = (props) => {
                 </li>
             ))} 
         </ul>
+        </>
     )
     
 };
