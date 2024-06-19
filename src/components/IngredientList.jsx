@@ -7,6 +7,7 @@ const IngredientList = (props) => {
                     style={{ backgroundColor: ingredient.color }}
                 >
                     {ingredient.name}
+                    <button type="button" onClick={() => props.onClickAction(ingredient)}>+</button>
                 </li>
             ))} 
         </ul>

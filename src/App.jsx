@@ -20,14 +20,20 @@ export const availableIngredients = [
   { name: 'Swiss Cheese', color: '#F1E1A8' },
 ];
 
-// const [stack, setStack] = useState();
 
 const App = () => {
+  const [stack, setStack] = useState([]);
+
+  const addToBurger = (ingredient) => {
+    console.log(ingredient);
+    setStack([ingredient, ...stack]);
+  }
+
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList  ingredients={availableIngredients}/>
+        <IngredientList ingredients={availableIngredients} onClickAction={addToBurger}/>
         <BurgerStack />
       </section>
     </main>
