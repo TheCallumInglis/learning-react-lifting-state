@@ -1,16 +1,17 @@
+import Ingredient from './Ingredient';
+
 const IngredientList = (props) => {
     return (
         <>
         <h2>Ingredients</h2>
         <ul>
             {props.ingredients.map((ingredient, index) => (
-                <li 
-                    key={index} 
-                    style={{ backgroundColor: ingredient.color }}
-                >
-                    {ingredient.name}
-                    <button type="button" onClick={() => props.onClickAction(ingredient)}>+</button>
-                </li>
+                <Ingredient 
+                    index={index} 
+                    ingredient={ingredient} 
+                    actionIcon="+"
+                    onClickAction={props.onClickAction}
+                />
             ))} 
         </ul>
         </>

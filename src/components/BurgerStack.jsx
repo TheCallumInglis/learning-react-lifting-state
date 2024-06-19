@@ -1,4 +1,5 @@
-// `src/components/BurgerStack.jsx`
+import Ingredient from './Ingredient';
+
 const BurgerStack = (props) => {
     return (
         <>
@@ -9,13 +10,12 @@ const BurgerStack = (props) => {
             <h2>Your Burger</h2>
             <ul>
                 {props.ingredients.map((ingredient, index) => (
-                    <li 
-                        key={index} 
-                        style={{ backgroundColor: ingredient.color }}
-                    >
-                        {ingredient.name}
-                        <button type="button" onClick={() => props.onClickAction(ingredient)}>X</button>
-                    </li>
+                    <Ingredient 
+                        index={index} 
+                        ingredient={ingredient} 
+                        actionIcon="X"
+                        onClickAction={props.onClickAction}
+                    />
                 ))} 
             </ul>
         </>
